@@ -1,13 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Pong Game</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ian Cassini Portfolio</title>
+    <style>
+        body {
+            background-color: #f0f0f0; /* light gray background */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #333;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .container {
+            width: 85%;
+            max-width: 900px;
+            margin: 40px auto;
+        }
+
+        .project {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+            .project img {
+                width: 150px;
+                height: 150px;
+                object-fit: cover;
+                border-radius: 8px;
+                background: #ddd;
+            }
+
+        .project-info {
+            flex-grow: 1;
+        }
+
+            .project-info h2 {
+                margin-top: 0;
+            }
+    </style>
 </head>
 <body>
-    <h1>Pong Game</h1>
-    <canvas id="pong" width="800" height="400"></canvas>
-    <script src="pong.js"></script>
+
+    <header>
+        <h1>Ian Casini Portfolio</h1>
+        <p>Software Projects • Coding • Development</p>
+    </header>
+
+    <div class="container">
+
+        <!-- Project 1 -->
+        <div class="project">
+            <img src="C:\Users\ianco\OneDrive\Desktop\code\Frogger picture.png" alt="Project image" />
+            <div class="project-info">
+                <h2>Frogger</h2>
+                <p>
+                    A lightweight arcade game where you dodge cars, ride moving logs, and land safely on lily pads. You have 3 lives to reach all pads and win.
+                </p>
+            </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project">
+            <img src="https://via.placeholder.com/150" alt="Project image" />
+            <div class="project-info">
+                <h2>Another Project</h2>
+                <p>
+                    Explain the features, tools you used, and any challenges
+                    you solved. This is the place to show your skills.
+                </p>
+            </div>
+        </div>
+
+        <!-- Add more projects below by copying the block above -->
+
+    </div>
+
 </body>
 </html>
