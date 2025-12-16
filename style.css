@@ -7,11 +7,8 @@
     display: flex;
     gap: 20px;
     align-items: flex-start;
-    flex-wrap: nowrap; /* MODIFIED: Prevents the image and text from stacking on small screens */
+    flex-wrap: wrap; /* Re-enabled wrapping for better mobile handling */
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    
-    /* Optional: Add min-width to prevent the container from squeezing too much */
-    min-width: 300px; 
 }
 
 .project img {
@@ -21,14 +18,19 @@
     border-radius: 8px;
     background: #ddd;
     transition: transform 0.35s ease, box-shadow 0.25s ease;
-    flex-shrink: 0; /* Ensures the image maintains its size */
+    /* Added flex-shrink: 0 to ensure the image never shrinks below 120px */
+    flex-shrink: 0; 
 }
 
 .project-info {
-    flex: 1 1 auto; /* Allows the text block to take up remaining space */
+    /* Ensures the text block grows to fill space, but respects the min-width */
+    flex: 1 1 50%; 
     text-align: left;
-    /* Optional: To ensure the text doesn't squeeze too much on narrow screens */
-    min-width: 150px; 
+    
+    /* MODIFIED: This ensures the text block is at least 200px wide, 
+       but allows it to wrap below the image if the total width is less than ~340px (120px image + 20px gap + 200px text).
+       This is the standard way to force side-by-side until the screen is too small. */
+    min-width: 200px;
 }
 
 .project-info h2 {
