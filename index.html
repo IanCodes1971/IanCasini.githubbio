@@ -91,7 +91,7 @@
             display: flex;
             gap: 20px;
             align-items: flex-start;
-            flex-wrap: wrap; /* Allows wrapping if content is too wide */
+            flex-wrap: wrap;
             box-shadow: 0 2px 6px rgba(0,0,0,0.1);
             opacity: 0;
             transform: translateY(20px) scale(0.99);
@@ -122,7 +122,7 @@
         .about-info,
         .resume-info {
             flex: 1;
-            /* max-width: calc(100% - 200px); */ /* Removed this to allow for full width if it wraps */
+            max-width: calc(100% - 200px);
         }
 
         .resume-btn {
@@ -145,7 +145,7 @@
             flex-direction: row;
             gap: 20px;
             align-items: flex-start;
-            flex-wrap: nowrap; /* Keep them in a single row */
+            flex-wrap: nowrap;
             background: white;
             padding: 20px;
             border-radius: 10px;
@@ -190,18 +190,12 @@
 
         /* Responsive */
         @media (max-width: 700px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            /* **MODIFIED SECTION**: Remove flex-direction: column to prevent stacking on mobile */
             .project,
             .resume-section,
             .about-section {
-                /* flex-direction: column; <-- REMOVED/COMMENTED OUT */
-                align-items: flex-start; /* Ensure left alignment when not stacking */
-                text-align: left; /* Ensure text alignment is left when not stacking */
-                flex-wrap: wrap; /* Re-enable wrapping to avoid overflow */
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
             }
 
             .project img,
@@ -210,10 +204,7 @@
                 height: 150px;
             }
 
-            .project-info {
-                max-width: calc(100% - 170px); /* Adjust max-width for new image size */
-            }
-
+            .project-info,
             .resume-info,
             .about-info {
                 max-width: 100%;
@@ -223,7 +214,8 @@
 </head>
 <body>
 
-        <div class="hero">
+    <!-- HERO -->
+    <div class="hero">
         <div class="hero-content">
             <img src="Headshot.png" alt="Ian Casini Photo" />
             <h1>Ian Casini</h1>
@@ -232,7 +224,8 @@
         </div>
     </div>
 
-        <div id="about" class="container">
+    <!-- ABOUT -->
+    <div id="about" class="container">
         <h2 class="section-title">About Me</h2>
         <div class="about-section reveal">
             <div class="about-info">
@@ -251,7 +244,8 @@
         </div>
     </div>
 
-        <div class="container">
+    <!-- RESUME -->
+    <div class="container">
         <h2 class="section-title">Resume</h2>
         <div class="resume-section reveal">
             <img src="resumepicture.png" alt="Resume Screenshot" />
@@ -263,7 +257,8 @@
         </div>
     </div>
 
-        <div id="projects" class="container">
+    <!-- PROJECTS -->
+    <div id="projects" class="container">
         <h2 class="section-title">Featured Projects</h2>
 
         <div class="project reveal">
